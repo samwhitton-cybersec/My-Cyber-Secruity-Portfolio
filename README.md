@@ -18,7 +18,6 @@ Hi, I'm Sam Whitton, a student currently studying and working on achieveing my B
 - [Scripts](Scripts/)
 - [CV](CV/)
 
-## My Links:
-- TryHackMe Profile: [TryHackMe Profile](https://tryhackme.com/p/spwcybersec)
-- LinkedIn Profile:
-- Cisco NetAcad Profile: 
+## Contact
+- Email: spwhitton.cybersec@gmail.com
+- LinkedIn: 
