@@ -25,4 +25,4 @@ Hi, I'm Sam Whitton, a student currently studying and working on achieving my BC
 
 ## Contact
 - Email: spwhitton.cybersec@gmail.com
-- LinkedIn: 
+- LinkedIn: [Profile](https://www.linkedin.com/in/sam-whitton-304350386/)
