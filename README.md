@@ -19,8 +19,8 @@ Hi, I'm Sam Whitton, a student currently studying and working on achieving my BC
 - [CV](CV/)
 
 ## Certificates and Achievements
-- [Linux Unhatched Certificate](Cisco/Certificates/Linux-Unhatched-Certification.pdf)
-- [Network Technician Career Path Certificate](Cisco/Certificates/Network-Technician-Career-Path-Certification.pdf)
+- [Linux Unhatched Certificate](Cisco/Certifications/Linux-Unhatched-Certification.pdf)
+- [Network Technician Career Path Certificate]([Cisco/Certifications/Network-Technician-Career-Path-Certification.pdf))
 
 ## Contact
 - Email: spwhitton.cybersec@gmail.com
