@@ -20,3 +20,5 @@ Hi, I am Sam Whitton, a student currently studying and working on achieveing my 
 
 ## My Links:
 - TryHackMe Profile: [TryHackMe Profile](https://tryhackme.com/p/spwcybersec)
+- LinkedIn Profile:
+- Cisco NetAcad Profile: 
