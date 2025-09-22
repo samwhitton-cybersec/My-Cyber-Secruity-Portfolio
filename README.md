@@ -1,4 +1,4 @@
-# My-Cyber-Secruity-Portfolio
+# My-Cyber-Security-Portfolio
 
 BSc Cyber Security Student | Practicing ethical hacking, Linux, and CTF challenges | Building hands-on labs and projects
 
