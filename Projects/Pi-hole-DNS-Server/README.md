@@ -71,3 +71,7 @@ upstream_recursive_servers:
 ## Comments
 I spent a couple days working on this project, the most annoying problem that occur during this was when I couldn't find out why DNS was resolving locally on the Pi but not on any clients. I spent a few hours breaking things.. looking in the wrong places...etc.. and then, I found out that ufw was simply blocking the port facing the LAN that Pi-hole uses to resolve DNS queries. But overall I learnt quite a lot and the final result was exactly what I wanted, so it was worth the effort and headache!😄
 
+# Commands used in this project
+Installation and setup
+```curl -sSL https://install.pi-hole.net | bash```
+```pihole -r         # Reconfigure```
