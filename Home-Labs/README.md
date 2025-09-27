@@ -36,8 +36,13 @@
 ### 7. DNS-over-DoT Setup using Stubby
 - Installed stubby ```sudo apt install stubby```
 - Edited ```/etc/stubby/stubby.yml```:
-```upstream_recursive_servers:
-    -address_data: 1.1.1.1
+```
+upstream_recursive_servers:
+    - address_data: 1.1.1.1
+        tls_auth_name: "cloudflare-dns.com"
+    - address_data: 9.9.9.9
+        tls_auth_name: "dns.quad9.net"
+```
       
 
 
