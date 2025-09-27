@@ -73,5 +73,46 @@ I spent a couple days working on this project, the most annoying problem that oc
 
 # Commands used in this project
 Installation and setup
-```curl -sSL https://install.pi-hole.net | bash```
-```pihole -r         # Reconfigure```
+```
+curl -sSL https://install.pi-hole.net | bash
+pihole -r                   # Reconfigure Pi-hole
+pihole setpassword         # Set or reset Pi-hole web admin password
+```
+Network and DNS
+```
+ip addr show                 # Show network interfaces and IP addresses
+nslookup pi.hole             # Test Pi-hole domain resolution
+dig example.com              # Check DNS
+ping 8.8.8.8                 # Test connectivity (bypassing DNS)
+```
+Logs and status
+```
+pihole status                # Check if Pi-hole is running
+pihole -g                     # Update
+tail -f /var/log/public.log    # Real-time DNS query log
+journalctl -u pihole-FTL        # Check Pi-hole FTL service logs
+```
+Firewall (UFW)
+```
+sudo ufw allow 53/tcp
+sudo ufw allow 53/udp
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+sudo ufw status verbose
+```
+Web Server (lighttpd)
+```
+sudo systemctl status lighttpd
+sudo systemctl restart lighttpd
+```
+Stubby (DNS-over-TLS)
+```
+sudo systemctl status stubby
+sudo systemctl restart stubby
+sudo nano /etc/stubby/stubby.yml     # Edit upstream DNS server
+```
+General Linux Tools
+```
+netstat -tulpn                 # Show active ports and processes
+ps aux | grep pihole           # Find Pi-hole processes
+```
