@@ -8,7 +8,7 @@
 
 ### 2. Firewall and Port Configuration
 - Checked open ports with ```sudo netstat -tulpn | grep :53```
-- Found UFW blocking DNS queries -> allowed LAN access: ```sudo ufw allow from 192.168.0.0/24 to any port 53```
+- Found UFW blocking DNS queries -> allowed LAN access: ```sudo ufw allow from 192.168.x.x/24 to any port 53```
 - Confirmed Pi-hole binding to port 53
 
 ### 3. Local DNS Testing
@@ -43,7 +43,32 @@ upstream_recursive_servers:
     - address_data: 9.9.9.9
         tls_auth_name: "dns.quad9.net"
 ```
-      
+- Started and enabled stubby ```sudo systemctl enable stubby```
+- Configured Pi-hole to forward DNS to 127.0.0.1#StubbyPort
+- Tested with ```dig google.com @127.0.0.1```
+
+### Ad-blocking Lists
+- Added extra blocklists in Pi-hole admin ```/admin -> Group Managment -> Lists```
+- Examples:
+    - StevenBlack Unified Hosts
+    - OISD Full
+- Ran ```pihole -g``` to update gravity
+- Verified queries blocked in Pi-hole Query Log
+
+### Advanced Config
+- Conditional Forwarding: Enabled in Pi-hole -> entered router IP + local subnet
+
+### 10. Logs and Monitoring
+- Checked Pi-hole logs:
+    - Real-time: ```pihole -t```
+    - System log: ```/var/log/pihole.log```
+- Monitored Query Log in web UI for blocked vs allowed domains
+
+## The Result
+- Pi-hole resolving DNS
+- Secured with DoT
+- Blocking ads/tracking domains
+- integrated into LAN via router
 
 
 
