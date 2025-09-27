@@ -62,7 +62,7 @@ upstream_recursive_servers:
 - Fixed NTP resolution error by ensuring DNS worked before time sync
 - Corrected Stubby ```.yml``` formatting (YAML indentation)
 
-## The Result
+## The Result 🎉
 - Pi-hole resolving DNS
 - Secured with DoT
 - Blocking ads/tracking domains
