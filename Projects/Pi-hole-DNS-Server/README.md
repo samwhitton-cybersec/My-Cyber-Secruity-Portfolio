@@ -25,13 +25,7 @@
 - Left Secondary DNS blank
 - Verified network-wide DNS was routed through Pi-hole
 
-### 6. Troubleshooting
-- Fixed issues with Pi-hole not resolving DNS on clients -> UFW was blocking traffic
-- Fixed "cannot bind to port 53" by restarting ```pihole-FTL```
-- Fixed NTP resolution error by ensuring DNS worked before time sync
-- Corrected Stubby ```.yml``` formatting (YAML indentation)
-
-### 7. DNS-over-DoT Setup using Stubby
+### 6. DNS-over-DoT Setup using Stubby
 - Installed stubby ```sudo apt install stubby```
 - Edited ```/etc/stubby/stubby.yml```:
 ```
@@ -45,7 +39,7 @@ upstream_recursive_servers:
 - Configured Pi-hole to forward DNS to 127.0.0.1#StubbyPort
 - Tested with ```dig google.com @127.0.0.1```
 
-### Ad-blocking Lists
+### 7. Ad-blocking Lists
 - Added extra blocklists in Pi-hole admin ```/admin -> Group Managment -> Lists```
 - Examples:
     - StevenBlack Unified Hosts
@@ -53,14 +47,20 @@ upstream_recursive_servers:
 - Ran ```pihole -g``` to update gravity
 - Verified queries blocked in Pi-hole Query Log
 
-### Advanced Config
+### 8. Advanced Config
 - Conditional Forwarding: Enabled in Pi-hole -> entered router IP + local subnet
 
-### 10. Logs and Monitoring
+### 9. Logs and Monitoring
 - Checked Pi-hole logs:
     - Real-time: ```pihole -t```
     - System log: ```/var/log/pihole.log```
 - Monitored Query Log in web UI for blocked vs allowed domains
+
+### ⚠️Troubleshooting
+- Fixed issues with Pi-hole not resolving DNS on clients -> UFW was blocking traffic
+- Fixed "cannot bind to port 53" by restarting ```pihole-FTL```
+- Fixed NTP resolution error by ensuring DNS worked before time sync
+- Corrected Stubby ```.yml``` formatting (YAML indentation)
 
 ## The Result
 - Pi-hole resolving DNS
