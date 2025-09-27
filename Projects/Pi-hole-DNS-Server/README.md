@@ -68,3 +68,6 @@ upstream_recursive_servers:
 - Blocking ads/tracking domains
 - integrated into LAN via router
 
+## Comments
+I spent a couple days tinkering and with had a few headaches, especially when I couldn't find out why DNS was resolving locally on the Pi but not on any clients. Then a few hours breaking things.. looking in the wrong places...etc.. I found out that ufw was simply blocking the port facing the LAN that Pi-hole uses to resolve DNS queries. But overall the final result is exactly what I wanted so it was worth the effort!
+
