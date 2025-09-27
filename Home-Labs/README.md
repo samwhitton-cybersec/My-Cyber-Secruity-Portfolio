@@ -1,6 +1,6 @@
 # My Home Lab Experiments and Projects
 
-## Pi-hole setup and troubleshooting
+## Project: Pi-hole setup and troubleshooting
 ### 1. Installation
 - Installed Pi-hole on Raspberry Pi
 - Set Pi-hole admin password ```pihole -a -p```
