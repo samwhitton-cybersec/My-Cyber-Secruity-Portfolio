@@ -34,3 +34,10 @@ Export the recovered file from the webshell
 Open the recovered image
 The image displayed correctly.
 The flag was visible in the image.
+
+🧰 Tools Used
+
+`xxd` – for hex dumping and rebuilding
+`nano` – to edit the hex dump
+`sz` – to transfer the recovered file to the host
+`Image viewer` – to view the file and obtain the flag
