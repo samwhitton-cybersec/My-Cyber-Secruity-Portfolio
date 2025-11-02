@@ -4,7 +4,7 @@ The CTFs that I have participated in and what I have learnt from ctf related cha
 ## PicoCTF
 ### Corrupted file - Forensics
 
-🔍 #### Steps Taken
+🔍 Steps Taken
 
 Dump the file to hex
 - `xxd file > file.hex`
@@ -35,7 +35,7 @@ Open the recovered image
 The image displayed correctly.
 The flag was visible in the image.
 
-🧰 #### Tools Used
+🧰 Tools Used
 
 - `xxd` – for hex dumping and rebuilding
 - `nano` – to edit the hex dump
