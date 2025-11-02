@@ -37,7 +37,7 @@ The flag was visible in the image.
 
 🧰 Tools Used
 
-`xxd` – for hex dumping and rebuilding
-`nano` – to edit the hex dump
-`sz` – to transfer the recovered file to the host
-`Image viewer` – to view the file and obtain the flag
+- `xxd` – for hex dumping and rebuilding
+- `nano` – to edit the hex dump
+- `sz` – to transfer the recovered file to the host
+- `Image viewer` – to view the file and obtain the flag
