@@ -40,4 +40,4 @@ The flag was visible in the image.
 - `xxd` – for hex dumping and rebuilding
 - `nano` – to edit the hex dump
 - `sz` – to transfer the recovered file to the host
-- `Image viewer` – to view the file and obtain the flag
+- Image viewer – to view the file and obtain the flag
