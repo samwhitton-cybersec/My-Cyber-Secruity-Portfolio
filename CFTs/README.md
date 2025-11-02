@@ -16,3 +16,8 @@ Noticed that there was a `\x` in the file extension hex line:
 
 Next rebuild the file.
 - `xxd -r file.hex > file_new.jpeg`
+
+Exported the file to my host machine.
+- `sz file_new.jpeg`
+
+Got the flag by viewing the image file.
