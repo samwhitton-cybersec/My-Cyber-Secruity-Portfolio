@@ -4,20 +4,33 @@ The CTFs that I have participated in and what I have learnt from ctf related cha
 ## PicoCTF
 ### Corrupted file - Forensics
 
-Identified that the unknown file was a JPEG file using `xxd` tool.
-- Dump the file to hex: `xxd file > file.hex`
+🔍 Steps Taken
 
-Edited the file using a text editor, I used `nano`
-- Command: `nano file.hex`
+Dump the file to hex
+`xxd file > file.hex`
 
-Noticed that there was a `\x` in the file extension hex line:
-- `00000000: 5c78 ffe0 0010 4a46 4946 0001 0100 0001  \x....JFIF......`
-- Edited the first byte: `5c79 ffe0` to the full magic number for JPEG a file `ffd8 ffe0`
+Open the hex dump for editing
+`nano file.hex`
 
-Next rebuild the file.
-- `xxd -r file.hex > file_new.jpeg`
+Inspect the header bytes
+Found this at the start of the file:
+`00000000: 5c78 ffe0 0010 4a46 4946 0001 0100 0001  \x....JFIF......`
 
-Exported the file to my host machine.
-- `sz file_new.jpeg`
+The correct JPEG “magic number” (file signature) should begin with:
+`FF D8 FF E0`
 
-Got the flag by viewing the image file.
+The `5c78` (\x) prefix indicated escaped characters, likely causing corruption.
+
+Fix the header
+Replaced `5c78 ffe0` with `ffd8 ffe0` in the hex dump.
+
+Rebuild the binary file
+`xxd -r file.hex > file_new.jpeg`
+
+Export the recovered file from the webshell
+`sz file_new.jpeg`
+
+(The sz command uses ZMODEM transfer in the picoCTF webshell to download files to the host.)
+Open the recovered image
+The image displayed correctly.
+The flag was visible in the image.
