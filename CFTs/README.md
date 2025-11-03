@@ -48,25 +48,25 @@ PIE/offset exploit
 
 🔍 Steps Taken
 
-- Downloaded the two binary files `vuln` and `vuln.c`
+Downloaded the two binary files `vuln` and `vuln.c`
 
-- Analysed the `vuln.c` file using nano.
-I found that there was a function in the program called `win` that opened the `flag.txt` file.
+Analysed the `vuln.c` file using nano.
+- I found that there was a function in the program called `win` that opened the `flag.txt` file.
 
 Needed to make the binary executable.
 - Used `chmod +x vuln` to do this.
 
-- Found the offset between the two functions in memory using `gdb`, and comparing the two.
+Found the offset between the two functions in memory using `gdb`, and comparing the two.
 - `gdb main`, then at the prompt `disass main` -> 0x133d
 - `gdb win`, then at the prompt `disass win` -> 0x12a7
 
-- Computed the offset using a hex calculator: 0x133d - 0x12a7 = 0x96 to find the address for the `win` function.
+Computed the offset using a hex calculator: 0x133d - 0x12a7 = 0x96 to find the address for the `win` function.
 
-- Next I used the program running on the server using: `nc rescued-float.picoctf.net 60214`
+Next I used the program running on the server using: `nc rescued-float.picoctf.net 60214`
 
-- The offset was 0x96, so I subtracted this from the `main` address of 0x647e3b30833d. This gave me the memory address of the `win` function located at 0x647e3b3082a7.
+The offset was 0x96, so I subtracted this from the `main` address of 0x647e3b30833d. This gave me the memory address of the `win` function located at 0x647e3b3082a7.
 
-- Entered the win address into the input field which then triggered the flag.txt and I got the flag.
+Entered the win address into the input field which then triggered the flag.txt and I got the flag.
 
 🧰 Tools Used
 - `gdb` - A tool used to inspect/modify registers, stack, and variables.
