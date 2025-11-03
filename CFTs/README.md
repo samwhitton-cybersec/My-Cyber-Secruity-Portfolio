@@ -41,3 +41,17 @@ The flag was visible in the image.
 - `nano` – to edit the hex dump
 - `sz` – to transfer the recovered file to the host
 - Image viewer – to view the file and obtain the flag
+
+### PIETIME - Binary Exploitation
+
+🔍 Steps Taken
+
+- Downloaded the two binary files `vuln` and `vuln.c`
+
+- Analysed the `vuln.c` file using nano.
+I found that there was a function in the program called `win` that opened the `flag.txt` file.
+
+Needed to make the binary executable.
+- Used `chmod +x vuln` to do this.
+
+- 
