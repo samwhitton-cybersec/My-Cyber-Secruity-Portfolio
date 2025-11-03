@@ -44,7 +44,7 @@ The flag was visible in the image.
 
 ## PIETIME - Binary Exploitation
 
-PIE/offset exploit
+Position Independent Executable (PIE)/offset exploit
 
 🔍 Steps Taken
 
