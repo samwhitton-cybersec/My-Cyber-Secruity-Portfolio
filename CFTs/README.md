@@ -66,4 +66,4 @@ Needed to make the binary executable.
 
 - The offset was 0x96, so I subtracted this from the `main` address of 0x647e3b30833d. This gave me the memory address of the `win` function located at 0x647e3b3082a7.
 
-- Entered the win address into the input field and found the flag.
+- Entered the win address into the input field which then triggered the flag.txt and I got the flag.
