@@ -44,6 +44,8 @@ The flag was visible in the image.
 
 ### PIETIME - Binary Exploitation
 
+PIE/offset exploit
+
 🔍 Steps Taken
 
 - Downloaded the two binary files `vuln` and `vuln.c`
@@ -54,4 +56,14 @@ I found that there was a function in the program called `win` that opened the `f
 Needed to make the binary executable.
 - Used `chmod +x vuln` to do this.
 
-- 
+- Found the offset between the two functions in memory using `gdb`, and comparing the two.
+- `gdb main` -> 0x133d
+- `gdb win` -> 0x12a7
+
+- Computed the offset from the hex addresses using a hex calculator: 0x133d - 0x12a7 = 0x96 to find the address for the `win` function.
+
+- Next I used the program running on the server using: `nc rescued-float.picoctf.net 60214`
+
+- The offset was 0x96, so I subtracted this from the `main` address of 0x647e3b30833d. This gave me the memory address of the `win` function located at 0x647e3b3082a7.
+
+- Entered the win address into the input field and found the flag.
