@@ -1,8 +1,8 @@
 # Capture The Flag
 The CTFs that I have participated in and what I have learnt from ctf related challenges
 
-## PicoCTF
-### Corrupted file - Forensics
+# PicoCTF
+## Corrupted file - Forensics
 
 🔍 Steps Taken
 
@@ -42,7 +42,7 @@ The flag was visible in the image.
 - `sz` – to transfer the recovered file to the host
 - Image viewer – to view the file and obtain the flag
 
-### PIETIME - Binary Exploitation
+## PIETIME - Binary Exploitation
 
 PIE/offset exploit
 
