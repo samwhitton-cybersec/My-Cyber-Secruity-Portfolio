@@ -57,8 +57,8 @@ Needed to make the binary executable.
 - Used `chmod +x vuln` to do this.
 
 - Found the offset between the two functions in memory using `gdb`, and comparing the two.
-- `gdb main` -> 0x133d
-- `gdb win` -> 0x12a7
+- `gdb main` -> 0x133d, then `disass main`
+- `gdb win` -> 0x12a7, then `disass win`
 
 - Computed the offset using a hex calculator: 0x133d - 0x12a7 = 0x96 to find the address for the `win` function.
 
@@ -67,3 +67,6 @@ Needed to make the binary executable.
 - The offset was 0x96, so I subtracted this from the `main` address of 0x647e3b30833d. This gave me the memory address of the `win` function located at 0x647e3b3082a7.
 
 - Entered the win address into the input field which then triggered the flag.txt and I got the flag.
+
+🧰 Tools Used
+- `gdb` - A tool used to inspect/modify registers, stack, and variables.
