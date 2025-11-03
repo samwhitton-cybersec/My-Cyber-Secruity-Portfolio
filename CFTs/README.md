@@ -60,7 +60,7 @@ Needed to make the binary executable.
 - `gdb main` -> 0x133d
 - `gdb win` -> 0x12a7
 
-- Computed the offset from the hex addresses using a hex calculator: 0x133d - 0x12a7 = 0x96 to find the address for the `win` function.
+- Computed the offset using a hex calculator: 0x133d - 0x12a7 = 0x96 to find the address for the `win` function.
 
 - Next I used the program running on the server using: `nc rescued-float.picoctf.net 60214`
 
