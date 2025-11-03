@@ -57,8 +57,8 @@ Needed to make the binary executable.
 - Used `chmod +x vuln` to do this.
 
 - Found the offset between the two functions in memory using `gdb`, and comparing the two.
-- `gdb main` -> 0x133d, then `disass main`
-- `gdb win` -> 0x12a7, then `disass win`
+- `gdb main`, then `disass main` -> 0x133d
+- `gdb win`, then `disass win` -> 0x12a7
 
 - Computed the offset using a hex calculator: 0x133d - 0x12a7 = 0x96 to find the address for the `win` function.
 
