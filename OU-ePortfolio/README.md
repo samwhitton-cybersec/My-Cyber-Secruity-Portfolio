@@ -7,7 +7,7 @@ Used iptables to set the firewall to accept incoming TCP traffic to ports 139 an
 Saved the config file:
 - ```sudo sh -c "iptables-save > /etc/iptables/rules.v4"```
 - Checked the file using:
-- ```sudo iptables -S```
+```sudo iptables -S```
 
 
 Then, set the firewall to accept all incoming traffic to port 80 from any connection.
