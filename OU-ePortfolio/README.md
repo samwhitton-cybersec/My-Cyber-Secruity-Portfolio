@@ -17,3 +17,5 @@ Then, set the firewall to accept all incoming traffic to port 80 from any connec
 ## Self-assessment Activity
 ### Using nmap to scan for open ports
 ```nmap -p0-35565 192.168.20.1```
+
+- After restricting ports the output from the attacker machine now shows only port 80 as being open.
