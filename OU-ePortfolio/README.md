@@ -13,3 +13,7 @@ Saved the config file:
 
 Then, set the firewall to accept all incoming traffic to port 80 from any connection.
 - Using ```-s 0.0.0.0/0``` to specify from any device.
+
+## Self-assessment Activity
+### Using nmap to scan for open ports
+```nmap -p0-35565 192.168.20.1```
