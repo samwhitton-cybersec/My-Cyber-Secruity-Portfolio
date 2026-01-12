@@ -19,3 +19,4 @@ Then, set the firewall to accept all incoming traffic to port 80 from any connec
 ```nmap -p0-35565 192.168.20.1```
 
 - After restricting ports the output from the attacker machine now shows only port 80 as being open.
+- On the webmaster's machine, all ports appear as open.
