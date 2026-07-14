@@ -1,5 +1,7 @@
 # OWASP Juice Shop notes and documentation
 
+## User data returned in API repsonse
+
 Findings:
 Sensitive user data exposed in API repsonse.
 
