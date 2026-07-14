@@ -16,3 +16,5 @@ API repsonse contained user account information
 
 Remediation:
 Remove unnecessary sensitive fields from repsonse
+
+![Alt text](images/user-data-exposed.png)
