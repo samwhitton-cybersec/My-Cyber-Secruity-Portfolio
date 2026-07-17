@@ -47,17 +47,22 @@ The biggest lesson was understanding how to trace functionality through a modern
 
 ### The useful investigation path was:
 
-Visible UI element
+Visible UI element\
+
         ↓
-Find owning component
+Find owning component\
+
         ↓
-Find state/data being modified
+Find state/data being modified\
+
         ↓
-Find function changing the state
+Find function changing the state\
+
         ↓
-Trace function arguments
+Trace function arguments\
+
         ↓
-Identify the user action that changes behaviour
+Identify the user action that changes behaviour\
 
 I initially spent time looking through framework-generated code such as Angular Material classes and polyfills. These were not useful because they belonged to the framework rather than the application's logic.
 
