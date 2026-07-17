@@ -1,30 +1,64 @@
 # OWASP Juice Shop — Close All UI Notifications Challenge Reflection
+### Investigation Process
 
-I started by inspecting the notification element in the browser developer tools, following the hint provided. Initially, I looked at the close button and its event listeners, but I found that the button itself was only the trigger and not where the main logic was stored.
+I began by inspecting the notification UI element using browser developer tools, following the challenge hint.
 
-I then traced the parent component and found the Angular component:
+My first instinct was to inspect the close button and its event listener. This showed that clicking the button triggered ```notification-closing``` behaviour, but the button itself was only the entry point.
+
+Instead of following the button classes (```mat-mdc-button```, etc.), I traced the parent notification component and found:
 
 ```<app-challenge-solved-notification>```
 
-This led me to the component logic where I found the notifications collection and the ```closeNotification()``` function.
+This identified the Angular component responsible for the notification feature.
 
-The important discovery was that ```closeNotification()``` had two behaviours:
+Searching for this component in the JavaScript led me to the component logic. Inside it, I found the notification state:
 
-- Normal use removed a single notification.
-- A second parameter allowed all notifications to be cleared.
+```notifications```
 
-By tracing where this parameter came from, I found:
+and the function responsible for removing notifications:
+
+```closeNotification(e, i = !1)```
+
+The function contained two different behaviours:
+
+```i ? this.notifications = [] : this.notifications.splice(e, 1)```
+
+This showed that:
+
+- ```splice()``` removed one notification.
+- Setting ```notifications = []``` cleared all notifications.
+
+The next step was finding what controlled the second parameter ```(i)```. Tracing where the function was called revealed:
 
 ```closeNotification(s, n.shiftKey)```
 
-This showed that holding the ```Shift key``` while clicking changed the behaviour because shiftKey became true.
+This showed that the behaviour depended on the keyboard state during the click event.
 
-The challenge was solved by using ```Shift + click``` on the close button.
+```shiftKey``` is a browser event property:
 
-## Reflection
+- Normal click → ```shiftKey = false``` → remove one notification.
+- Shift + click → ```shiftKey = true``` → clear all notifications.
 
-The main lesson I learned was to follow the application logic rather than getting stuck in framework code. At first I spent time looking through Angular Material classes and JavaScript bundles, but the useful path was:
+Holding Shift while clicking the close button triggered the correct behaviour and completed the challenge.
 
-```UI element → Component → Function → Parameters → Behaviour```
+### Lessons Learned
 
-For future challenges, I will focus on identifying the component responsible for the feature, then trace the data flow and event handling from there.
+The biggest lesson was understanding how to trace functionality through a modern web application.
+
+### The useful investigation path was:
+
+Visible UI element
+        ↓
+Find owning component
+        ↓
+Find state/data being modified
+        ↓
+Find function changing the state
+        ↓
+Trace function arguments
+        ↓
+Identify the user action that changes behaviour
+
+I initially spent time looking through framework-generated code such as Angular Material classes and polyfills. These were not useful because they belonged to the framework rather than the application's logic.
+
+For future challenges, I will first identify the component responsible for the feature and follow the application's data flow instead of getting distracted by framework internals.
