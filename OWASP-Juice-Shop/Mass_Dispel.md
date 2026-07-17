@@ -17,7 +17,7 @@ By tracing where this parameter came from, I found:
 
 ```closeNotification(s, n.shiftKey)```
 
-This showed that holding the Shift key while clicking changed the behaviour because shiftKey became true.
+This showed that holding the ```Shift key``` while clicking changed the behaviour because shiftKey became true.
 
 The challenge was solved by using ```Shift + click``` on the close button.
 
