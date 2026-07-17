@@ -4,18 +4,18 @@ I started by inspecting the notification element in the browser developer tools,
 
 I then traced the parent component and found the Angular component:
 
-<app-challenge-solved-notification>
+```<app-challenge-solved-notification>```
 
 This led me to the component logic where I found the notifications collection and the closeNotification() function.
 
-The important discovery was that closeNotification() had two behaviours:
+The important discovery was that ```closeNotification()``` had two behaviours:
 
 Normal use removed a single notification.
 A second parameter allowed all notifications to be cleared.
 
 By tracing where this parameter came from, I found:
 
-closeNotification(s, n.shiftKey)
+```closeNotification(s, n.shiftKey)```
 
 This showed that holding the Shift key while clicking changed the behaviour because shiftKey became true.
 
@@ -25,6 +25,6 @@ The challenge was solved by using Shift + click on the close button.
 
 The main lesson I learned was to follow the application logic rather than getting stuck in framework code. At first I spent time looking through Angular Material classes and JavaScript bundles, but the useful path was:
 
-UI element → Component → Function → Parameters → Behaviour
+```UI element → Component → Function → Parameters → Behaviour```
 
 For future challenges, I will focus on identifying the component responsible for the feature, then trace the data flow and event handling from there.
