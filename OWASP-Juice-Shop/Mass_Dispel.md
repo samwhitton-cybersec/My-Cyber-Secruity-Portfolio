@@ -6,7 +6,7 @@ I then traced the parent component and found the Angular component:
 
 ```<app-challenge-solved-notification>```
 
-This led me to the component logic where I found the notifications collection and the closeNotification() function.
+This led me to the component logic where I found the notifications collection and the ```closeNotification()``` function.
 
 The important discovery was that ```closeNotification()``` had two behaviours:
 
@@ -19,7 +19,7 @@ By tracing where this parameter came from, I found:
 
 This showed that holding the Shift key while clicking changed the behaviour because shiftKey became true.
 
-The challenge was solved by using Shift + click on the close button.
+The challenge was solved by using ```Shift + click``` on the close button.
 
 ## Reflection
 
