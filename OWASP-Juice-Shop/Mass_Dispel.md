@@ -10,8 +10,8 @@ This led me to the component logic where I found the notifications collection an
 
 The important discovery was that ```closeNotification()``` had two behaviours:
 
-### Normal use removed a single notification.
-### A second parameter allowed all notifications to be cleared.
+- Normal use removed a single notification.
+- A second parameter allowed all notifications to be cleared.
 
 By tracing where this parameter came from, I found:
 
