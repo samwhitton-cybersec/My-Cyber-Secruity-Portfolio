@@ -8,4 +8,5 @@ Using cowrie for the honey pot.
 ### 1.1. Downloaded cowrie's source code.
 ```git clone https://github.com/cowrie/cowrie.git```
 
-### 2. Created a Python virtual environment. -- A seperate Python environment called cowrie-env, and activated it inside the cowrie directory using: ```python3 -m venv cowrie-env```
+### 2. Created a Python virtual environment. -- A seperate Python environment called cowrie-env, and activated it inside the cowrie directory using: 
+```python3 -m venv cowrie-env```
